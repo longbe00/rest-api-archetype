@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.mikefree</groupId>
+  <artifactId>rest-api-archetype</artifactId>
+  <version>0.0.1</version>
+  <name>Archetype - oneplat</name>
+  <url>http://maven.apache.org</url>
+  <packaging>jar</packaging>
+
+	<repositories>
+		<!-- repository for ip-filter module -->
+		<repository>
+			<id>ip-filter-mvn-repo</id>
+			<url>https://raw.github.com/madvirus/ip-filter/mvn-repo/</url>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+			</snapshots>
+		</repository>
+	</repositories>
+
+    <!-- 배포할 자신의 nexus url -->
+	<distributionManagement>
+		<repository>
+			<id>nexus</id>
+			<name>RepositoryProxy</name>
+			<url></url>
+		</repository>
+		<snapshotRepository>
+			<id>nexus</id>
+			<name>RepositoryProxy</name>
+			<url></url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<artifactId>maven-eclipse-plugin</artifactId>
+					<version>2.10</version>
+					<configuration>
+						<additionalProjectnatures>
+							<projectnature>springframework.ide.eclipse.core.springnature</projectnature>
+						</additionalProjectnatures>
+						<additionalBuildcommands>
+							<buildcommand>springframework.ide.eclipse.core.springbuilder</buildcommand>
+						</additionalBuildcommands>
+						<downloadSources>true</downloadSources>
+						<downloadJavadocs>true</downloadJavadocs>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>
